@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+	<name>
+		<lang name="default">Plugin_title</lang>
+	</name>
+	<author>
+		<lang name="default">author</lang>
+	</author>
+	<homepage>http://livestreet.ru</homepage>
+	<version>1.0.0</version>
+	<requires>
+		<livestreet>0.4.2</livestreet>
+		<plugins>
+		</plugins>
+	</requires>
+	<description>
+		<lang name="default">This_is_a_template_of_plugin</lang>
+		<lang name="russian">Это_шаблон_плагина</lang>
+	</description>
+</plugin>
