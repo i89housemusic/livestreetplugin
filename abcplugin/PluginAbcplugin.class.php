@@ -9,21 +9,17 @@ if (!class_exists('Plugin')) {
 
 class PluginAbcplugin extends Plugin {
 	
-	/**
-	 * Активация плагина.
-	 */
-	public function Activate() {		
+	// Активация плагина
+	public function Activate() {
 		/*
-        if (!$this->isTableExists('prefix_tablename')) { // При активации выполняем SQL дамп, если не существует таблица tablename
-			$this->ExportSQL(dirname(__FILE__).'/install.sql');
+        if (!$this->isTableExists('prefix_tablename')) { 
+			$this->ExportSQL(dirname(__FILE__).'/install.sql'); // Если нам надо изменить БД, делаем это здесь
 		}
 		 */
 		return true;
 	}
-
-    /**
-     * Деактивация плагина
-     */
+    
+	// Деактивация плагина
 	public function Deactivate(){
         /*
 		$this->ExportSQL(dirname(__FILE__).'/deinstall.sql'); // Выполнить деактивационный sql, если надо
@@ -31,9 +27,7 @@ class PluginAbcplugin extends Plugin {
     }
 
 
-	/**
-	 * Инициализация плагина
-	 */
+	// Инициализация плагина
 	public function Init() {
 	
 	}
