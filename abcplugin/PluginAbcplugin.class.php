@@ -10,7 +10,42 @@ if (!class_exists('Plugin')) {
 class PluginAbcplugin extends Plugin {
 
 	// Объявление переопределений
-	
+	protected $aInherits=array(
+       /*
+	    * Переопределение модулей (функционал):
+	    *
+	    * 'module'  =>array('ModuleTopic'=>'_ModuleTopic'),
+	    *
+	    * К классу ModuleTopic (/classes/modules/Topic.class.php) добавляются методы из
+	    * PluginAbcplugin_ModuleTopic (/plugins/abcplugin/classes/modules/Topic.class.php) - новые или замена существующих
+	    *
+	    *
+	    * Переопределение мапперов (запись/чтение объектов в/из БД):
+	    *
+	    * 'mapper'  =>array('ModuleTopic_MapperTopic' => '_ModuleTopic_MapperTopic'),
+	    *
+	    * К классу ModuleTopic_MapperTopic (/classes/modules/mapper/Topic.mapper.class.php) добавляются методы из
+	    * PluginAbcplugin_ModuleTopic_EntityTopic (/plugins/abcplugin/classes/modules/mapper/Topic.mapper.class.php) - новые или замена существующих
+	    *
+	    *
+	    * Переопределение сущностей (интерфейс между объектом и записью/записями в БД):
+	    *
+	    * 'entity'  =>array('ModuleTopic_EntityTopic' => '_ModuleTopic_EntityTopic'),
+	    *
+	    * К классу ModuleTopic_EntityTopic (/classes/modules/entity/Topic.entity.class.php) добавляются методы из
+	    * PluginAbcplugin_ModuleTopic_EntityTopic (/plugins/abcplugin/classes/modules/entity/Topic.entity.class.php) - новые или замена существующих
+	    *
+	    */
+		
+
+    );
+
+	// Объявление делегирований (нужно фактически только для того, чтобы менять tpl файл шаблона на свой целиком , для остального лучше использовать переопределения)
+	public $aDelegates = array(
+            // 'template' => array('index.tpl'=>'my_plugin_index.tpl')
+    );
+
+
 
 	
 	// Активация плагина
@@ -33,7 +68,7 @@ class PluginAbcplugin extends Plugin {
 
 	// Инициализация плагина
 	public function Init() {
-	
+		// $this->Viewer_AddMenu('blog',Plugin::GetTemplatePath(__CLASS__).'/menu.blog.tpl'); // 
 	}
 }
 ?>
