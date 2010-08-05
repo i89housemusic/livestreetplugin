@@ -2,9 +2,11 @@
 <plugin>
 	<name>
 		<lang name="default">Plugin_title</lang>
+		<lang name="russian">Название_плагина</lang>
 	</name>
 	<author>
 		<lang name="default">author</lang>
+		<lang name="russian">автор</lang>
 	</author>
 	<homepage>http://livestreet.ru</homepage>
 	<version>1.0.0</version>
@@ -14,7 +16,7 @@
 		</plugins>
 	</requires>
 	<description>
-		<lang name="default">This_is_a_template_of_plugin</lang>
-		<lang name="russian">Это_шаблон_плагина</lang>
+		<lang name="default">This_is_a_template_of_plugin_place_your_description_here</lang>
+		<lang name="russian">Это_шаблон_плагина_пишите_своё_описание_здесь</lang>
 	</description>
 </plugin>
