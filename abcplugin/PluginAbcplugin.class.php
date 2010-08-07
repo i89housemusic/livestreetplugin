@@ -9,7 +9,13 @@ if (!class_exists('Plugin')) {
 
 class PluginAbcplugin extends Plugin {
 
-	// Объявление переопределений
+    // Объявление делегирований (нужны для того, чтобы назначить свои экшны и tpl в шаблонах)
+	public $aDelegates = array(
+            // 'action' => array('ActionIndex'=>'_ActionSomepage'),
+            // 'template' => array('index.tpl'=>'my_plugin_index.tpl')
+    );
+
+	// Объявление переопределений (модули, мапперы и сущности)
 	protected $aInherits=array(
        /*
 	    * Переопределение модулей (функционал):
@@ -40,12 +46,6 @@ class PluginAbcplugin extends Plugin {
 
     );
 
-	// Объявление делегирований (нужно фактически только для того, чтобы менять tpl файл шаблона на свой целиком , для остального лучше использовать переопределения)
-	public $aDelegates = array(
-            // 'template' => array('index.tpl'=>'my_plugin_index.tpl')
-    );
-
-	
 	// Активация плагина
 	public function Activate() { 
 		/*
