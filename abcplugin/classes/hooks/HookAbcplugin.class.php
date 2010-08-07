@@ -1,6 +1,6 @@
 <?php
 
-class PluginAbcplugin_HookAbcplugin extends Hook { // Название класса означает
+class PluginAbcplugin_HookAbcplugin extends Hook { 
 	
 	
 	public function RegisterHook() {
@@ -12,8 +12,8 @@ class PluginAbcplugin_HookAbcplugin extends Hook { // Название клас�
 		 *
 		 * $this->AddHook('module_topic_addtopic_before','func_topic_addtopic_before');
 		 *
-		 * Будет вызвана функция func_topic_addtopic_before($aVars) , где $aVars - массив аргументов, переданных этой функции.
-		 * Передача результата в функцию AddTopic() делается путем изменения аргументов по ссылке - &$aVars[0]
+		 * Будет вызвана функция func_topic_addtopic_before($aVars) , где $aVars - НЕассоциативный массив аргументов, переданных этой функции.
+		 * Передача результата в функцию AddTopic() делается путем изменения аргументов по ссылке - например, &$aVars[0]
 		 */
 
 		/*
@@ -25,23 +25,28 @@ class PluginAbcplugin_HookAbcplugin extends Hook { // Название клас�
 		 * Функция должна завершаться при помощи return $Var
 		 */
 
+		/*
+		 * Хук в конкреное место движка
+		 *
+		 * $this->AddHook('init_action','func_init_action', __CLASS__, -5);
+		 *
+		 * Приоритет для вызова хука = -5. Этот приоритет так же можно указывать и в хуках на модели.
+		 * Будет вызвана функция func_init_action($Var) в том месте движка, где стоит данный хук
+		 */
+
+		/*
+		 * Хук с делегированием
+		 *
+		 * $this->AddDelegateHook('module_topic_addtopic_before','func_topic_addtopic_new',__CLASS__);
+		 *
+		 * Полная подмена функции AddTopic() модуля Topic на свою.
+		 * Будет вызвана функция func_topic_addtopic_new($Var), где $aVars - НЕассоциативный массив аргументов.
+		 * Делегирование существует в движке только для обеспечения совместимости со старыми плагинами, рекомендуется вместо него использовать переопределение.
+		 */
 
 
 
 
-		
-		$this->AddHook('module_topic_addtopic_after','topic_addtopic_after');
-		$this->AddHook('module_topic_updatetopic_before','topic_updatetopic_before');
-		$this->AddHook('module_topic_updatetopic_after','topic_updatetopic_after');
-		
-		$this->AddHook('template_form_add_topic_topic_end','TopicExtraFields');
-		$this->AddHook('template_form_update_topic_topic_end','TopicExtraFields');
-		$this->AddHook('template_form_add_topic_question_end','TopicExtraFields');
-		$this->AddHook('template_form_add_topic_link_end','TopicExtraFields');
-		$this->AddHook('template_form_add_topic_picturestory_end','TopicDisableCheckbox');
-
-		$this->AddHook('init_action','func_init_action');
-		$this->AddHook("check_topic_fields", "check_topic_fields");
 
 	}
 	
