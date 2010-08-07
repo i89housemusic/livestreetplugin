@@ -1,8 +1,8 @@
 <?php
 /*
- * Пример сущности объекта Somepage
+ * Пример сущности _нового_ объекта Somepage
  */
-class PluginAbcplugin_ModuleSomepage_EntitySomepage extends PluginAbcplugin_Inherit_ModuleSomepage_EntitySomepage
+class PluginAbcplugin_ModuleSomepage_EntitySomepage extends Entity
 {
 
 }

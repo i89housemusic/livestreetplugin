@@ -1,8 +1,8 @@
 <?php
 /*
- * Пример маппера объекта Somepage
+ * Пример маппера _нового_ объекта Somepage
  */
-class PluginAbcplugin_ModuleSomepage_MapperSomepage extends PluginAbcplugin_Inherit_ModuleSomepage_MapperSomepage
+class PluginAbcplugin_ModuleSomepage_MapperSomepage extends Mapper
 {
 
 }
