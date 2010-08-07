@@ -1,8 +1,8 @@
 <?php
 /* 
- * Пример файла переопределения модуля. В данном случае это ModulTopic
+ * Пример файла _нового_ модуля.
  */
-class PluginAbcplugin_ModuleTopic extends PluginAbcplugin_Inherit_ModuleTopic {
+class PluginAbcplugin_ModuleTopic extends Module {
 
 
 }

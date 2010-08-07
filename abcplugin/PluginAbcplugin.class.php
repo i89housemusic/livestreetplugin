@@ -45,8 +45,6 @@ class PluginAbcplugin extends Plugin {
             // 'template' => array('index.tpl'=>'my_plugin_index.tpl')
     );
 
-
-
 	
 	// Активация плагина
 	public function Activate() { 
