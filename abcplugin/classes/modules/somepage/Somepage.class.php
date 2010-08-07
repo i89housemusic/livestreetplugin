@@ -1,9 +1,8 @@
 <?php
 /* 
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Пример файла переопределения модуля. В данном случае это ModulTopic
  */
-class PluginAbcplugin_ModuleTopic extends PluginEftopics_Inherit_ModuleTopic {
+class PluginAbcplugin_ModuleTopic extends PluginAbcplugin_Inherit_ModuleTopic {
 
 
 }

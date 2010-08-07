@@ -1,4 +1,8 @@
 <?php
+/*
+ * Пример файла хуков
+ *
+ */
 
 class PluginAbcplugin_HookAbcplugin extends Hook { 
 	
