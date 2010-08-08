@@ -78,5 +78,20 @@ class PluginAbcplugin extends Plugin {
 	public function Init() {
 		// $this->Viewer_AddMenu('blog',Plugin::GetTemplatePath(__CLASS__).'/menu.blog.tpl'); // например, задаем свой вид меню
 	}
+
+    /**
+	 * Проверяет наличие таблицы в БД - может использоваться в Activate() 
+	 *
+	 * @param unknown_type $sTableName
+	 * @return unknown
+	 */
+	protected function isTableExists($sTableName) {
+		$sTableName = str_replace('prefix_', Config::Get('db.table.prefix'), $sTableName);
+		$sQuery="SHOW TABLES LIKE '{$sTableName}'";
+		if ($aRows=$this->Database_GetConnect()->select($sQuery)) {
+			return true;
+		}
+		return false;
+	}
 }
 ?>
