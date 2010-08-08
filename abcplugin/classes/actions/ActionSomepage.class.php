@@ -11,6 +11,7 @@ class PluginAbcplugin_ActionSomepage extends ActionPlugin {
 	 *
 	 */
 	public function Init() {
+        $this->SetDefaultEvent('index'); // ПРи ображении к domain.com/somepage будет вызываться EventIndex()
 	}
 
 	/**
@@ -18,11 +19,23 @@ class PluginAbcplugin_ActionSomepage extends ActionPlugin {
 	 *
 	 */
 	protected function RegisterEvent() {
-		//$this->AddEvent('add','EventAdd'); // урл /somepage/add
-	    //$this->AddEvent('edit','EventEdit'); // урл /somepage/edit
+		$this->AddEvent('index','EventIndex');
+        //$this->AddEvent('add','EventAdd'); // урл /somepage/add  - вызывается EventAdd()
+	    //$this->AddEvent('edit','EventEdit'); // урл /somepage/edit - вызывается EventEdit()
 	}
 
+    protected function EventIndex() {
+
+    }
 
 
+
+
+
+    /**
+     * Shutdown Function
+     */
+     public function EventShutdown() {
+     }
 }
 ?>
