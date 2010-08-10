@@ -76,7 +76,13 @@ class PluginAbcplugin extends Plugin {
 
 	// Инициализация плагина
 	public function Init() {
+		
+		//$this->Viewer_AppendStyle(Plugin::GetTemplatePath('PluginAbcplugin')."/css/style.css"); // Добавление своего CSS
+		//$this->Viewer_AppendScript(Plugin::GetTemplatePath('PluginAbcplugin')."/js/javascript.js"); // Добавление своего JS
+
 		// $this->Viewer_AddMenu('blog',Plugin::GetTemplatePath(__CLASS__).'/menu.blog.tpl'); // например, задаем свой вид меню
+
+
 	}
 
     /**
